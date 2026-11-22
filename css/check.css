@@ -1,0 +1,83 @@
+:root{
+  --cream:#e8dec7;
+  --paper:#f4efe6;
+  --forest:#25483f;
+  --red:#ad061a;
+  --navy:#143548;
+  --sage:#a3b28a;
+  --ink:#143548;
+  --muted:#5a6a68;
+  --line:#d9d0c0;
+  --shadow:0 8px 24px rgba(20,53,72,.12), 0 1px 4px rgba(20,53,72,.06);
+  --serif:'Merriweather', Georgia, 'Times New Roman', serif;
+  --sans:'Merriweather Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);-webkit-font-smoothing:antialiased}
+body{min-height:100dvh}
+
+.topbar{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:10px 14px;padding-top:max(10px, env(safe-area-inset-top));
+  background:var(--forest);color:var(--cream);box-shadow:0 2px 10px rgba(0,0,0,.18)}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.brand-mark{width:32px;height:32px;flex:0 0 auto}
+.brand h1{font-family:var(--serif);font-weight:700;font-size:18px;margin:0;letter-spacing:-.01em;color:var(--cream)}
+.brand h1 em{font-style:italic;font-weight:400;color:#f3ead8}
+.tagline{margin:2px 0 0;font-size:12px;color:#d5decc}
+.map-nav{flex:0 0 auto;font-size:13px;font-weight:600;text-decoration:none;color:var(--forest);
+  background:var(--cream);padding:10px 14px;border-radius:999px;min-height:44px;display:inline-flex;align-items:center}
+
+.page{max-width:720px;margin:0 auto;padding:18px 16px calc(32px + env(safe-area-inset-bottom))}
+.intro{font-size:16px;line-height:1.55;margin:0 0 20px;color:var(--navy)}
+
+.summary{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 16px 8px;
+  box-shadow:var(--shadow);margin-bottom:28px}
+.summary h2,.block h2{font-family:var(--serif);font-size:20px;margin:0 0 8px;color:var(--navy)}
+.sum-lead{margin:0 0 12px;font-size:14px;color:var(--muted);line-height:1.45}
+.sum-list{list-style:none;margin:0;padding:0}
+.sum-list li{border-top:1px solid var(--line)}
+.sum-list li:first-child{border-top:0}
+.sum-list a{display:flex;align-items:center;gap:12px;padding:12px 4px;min-height:48px;
+  text-decoration:none;color:var(--navy);font-weight:500;font-size:16px}
+.sum-list a:hover{color:var(--forest)}
+.sum-n{flex:0 0 44px;height:32px;display:grid;place-items:center;border-radius:999px;
+  background:var(--forest);color:var(--cream);font-weight:700;font-size:14px}
+
+.block{margin:0 0 28px}
+.block h2 .count,.block summary h2 .count{display:inline-block;margin-left:6px;font-family:var(--sans);
+  font-size:13px;font-weight:700;color:var(--muted);background:#ece4d6;border-radius:999px;padding:2px 8px;
+  vertical-align:middle}
+.blurb{font-size:15px;line-height:1.5;color:var(--muted);margin:0 0 14px}
+.cards{display:flex;flex-direction:column;gap:12px}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
+.card h3{font-family:var(--serif);font-size:18px;line-height:1.3;margin:0 0 6px;color:var(--navy)}
+.addr{margin:0 0 10px;font-size:14px;color:var(--muted);line-height:1.4}
+.issue{margin:0 0 14px;font-size:15.5px;line-height:1.5;color:#1c3338;
+  background:#f7f1e6;border-left:3px solid var(--sage);padding:10px 12px;border-radius:0 10px 10px 0}
+.actions{display:flex;flex-direction:column;gap:8px}
+.btn{display:flex;align-items:center;justify-content:center;text-align:center;min-height:48px;
+  padding:10px 14px;border-radius:999px;font:600 15px var(--sans);text-decoration:none;border:1px solid var(--line)}
+.btn-primary{background:var(--red);border-color:var(--red);color:#fff}
+.btn-ghost{background:#fff;color:var(--navy)}
+.btn-muted{background:#ece4d6;color:var(--muted);border-color:transparent;cursor:default}
+
+details summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;
+  min-height:48px;padding:4px 0}
+details summary::-webkit-details-marker{display:none}
+details summary h2{margin:0}
+details summary::after{content:'Show list';margin-left:auto;font:600 14px var(--sans);color:var(--forest);
+  background:#ece4d6;padding:8px 12px;border-radius:999px;white-space:nowrap}
+details[open] summary::after{content:'Hide list'}
+details .blurb{margin-top:8px}
+
+.foot{margin:12px 0 0;text-align:center}
+.foot a{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 20px;
+  font:600 15px var(--sans);color:var(--cream);background:var(--forest);text-decoration:none;border-radius:999px}
+
+@media (min-width:560px){
+  .actions{flex-direction:row}
+  .btn{flex:1 1 0}
+  .page{padding-left:20px;padding-right:20px}
+}

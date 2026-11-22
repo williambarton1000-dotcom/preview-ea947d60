@@ -1,0 +1,6 @@
+photos/originals/
+tools/
+data/REVIEW.md
+data/SOURCES.md
+__pycache__/
+.DS_Store
